@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+
+; adds a context menu when right click on a folder and when on the background of a folder : 
+; the argument pass is not %1 but %V : If there is no parameter passed this is the working directory - https://superuser.com/a/1238803/300121 & https://superuser.com/a/473602/300121
+; https://superuser.com/a/433395/300121
+[HKEY_CLASSES_ROOT\Directory\shell]
+@="none"
+[HKEY_CLASSES_ROOT\Directory\shell\ResizeAllImages]
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+@="Resize all images"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ResizeAllImages]
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+@="Resize all images"
+[HKEY_CLASSES_ROOT\Directory\shell\ResizeAllImages\command] 
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\resize image\\resize all images from folder.ps1\" \"%V\""
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ResizeAllImages\command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\resize image\\resize all images from folder.ps1\" \"%V\""

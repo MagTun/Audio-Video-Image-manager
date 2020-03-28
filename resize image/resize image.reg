@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+
+;*********************************************************************
+;****************** Add menu to context menu *************************
+;*********************************************************************
+
+;# ============================================================== ¤ for image type 
+
+; set the name + icon in the context menu
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\image\shell\ResizeImage]
+@="Resize image"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+
+;add the command that open the powershell via a cmd
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\image\shell\ResizeImage\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\resize image\\resize image.ps1\" \"%1\""
+
+
+; ⚠ to debug use /K (instead of /C) (/K Carries out the command specified by string but remains : good to debug) ● 
+
+; # the path is stored in the %1 argument (which is written in the registry under quote that are escaped: \"%1\" ). To retrieve it, we need the $arg (inbuilt arg). Don't forget the quote around $FilePath.
+
+; more info on 
+; C:\Users\Me\Desktop\petit_program\PowerShell\PowerShell_script\tuto registry (add context menu...).reg
+

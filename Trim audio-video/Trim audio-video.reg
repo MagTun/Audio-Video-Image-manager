@@ -1,0 +1,119 @@
+Windows Registry Editor Version 5.00
+
+;*********************************************************************
+;****************** Add menu to context menu *************************
+;*********************************************************************
+
+;# ============================================================== ¤ for video type (except mp4)
+
+; set the name + icon in the context menu
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\video\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+
+;add the command that open the powershell via a cmd
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\video\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+
+;# ============================================================== ¤ for .mp4 - not recognized as video type 
+
+; set the name + icon in the context menu
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mp4\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+; add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mp4\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+;# ============================================================== ¤ for .mkv - not recognized as video type 
+
+; set the name + icon in the context menu
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mkv\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+; add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mkv\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+
+;# ============================================================== ¤ for .mov - not recognized as video type 
+
+; set the name + icon in the context menu
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mov\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+; add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.mov\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+;# ============================================================== ¤ for .m4v - not recognized as video type 
+
+; set the name + icon in the context menu
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.m4v\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+; add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.m4v\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+
+
+;# ============================================================== ¤ for audio 
+
+; set the name + icon in the context menu
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\audio\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon" = "%SystemRoot%\\System32\\shell32.dll,117"
+
+
+
+;add the command that open the powershell via a cmd
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\audio\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+
+
+;# ============================================================== ¤ for audio .m4a 
+
+; set the name + icon in the context menu
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.m4a\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon" = "%SystemRoot%\\System32\\shell32.dll,117"
+
+
+
+;add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.m4a\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+;# ============================================================== ¤ for audio .amr
+
+; set the name + icon in the context menu
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.amr\shell\TrimAudioVideo]
+@="Trim audio-video"
+"Icon" = "%SystemRoot%\\System32\\shell32.dll,117"
+
+
+
+;add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.amr\shell\TrimAudioVideo\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Trim audio-video\\Trim audio-video.ps1\" \"%1\""
+
+
+; ⚠ to debug use /K (instead of /C) (/K Carries out the command specified by string but remains : good to debug) ● 
+
+; # the path is stored in the %1 argument (which is written in the registry under quote that are escaped: \"%1\" ). To retrieve it, we need the $arg (inbuilt arg). Don't forget the quote around $FilePath.
+
+

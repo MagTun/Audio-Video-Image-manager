@@ -1,0 +1,41 @@
+Windows Registry Editor Version 5.00
+
+;*********************************************************************
+;****************** Add menu to context menu *************************
+;*********************************************************************
+
+
+;# ============================================================== ¤ for audio 
+; set the name + icon in the context menu
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\audio\shell\CutAudioFiveminsChunks]
+@="Cut Audio in 5min chunks"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+;add the command that open the powershell via a cmd
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\audio\shell\CutAudioFiveminsChunks\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Cut audio in 5min chunks\\Cut audio in 5min chunks.ps1\" \"%1\""
+
+
+;# ============================================================== ¤ for audio .m4a 
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.m4a\shell\CutAudioFiveminsChunks]
+@="Cut Audio in 5min chunks"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+;add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.m4a\shell\CutAudioFiveminsChunks\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Cut audio in 5min chunks\\Cut audio in 5min chunks.ps1\" \"%1\""
+
+;# ============================================================== ¤ for audio .amr 
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.amr\shell\CutAudioFiveminsChunks]
+@="Cut Audio in 5min chunks"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,117"
+
+;add the command that open the powershell via a cmd
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.amr\shell\CutAudioFiveminsChunks\Command]
+@="CMD.EXE /c Powershell.exe -file \"C:\\Users\\Me\\Desktop\\__powershell\\Cut audio in 5min chunks\\Cut audio in 5min chunks.ps1\" \"%1\""
+
+
+
+;--------- run directly PowerShell:
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\audio\shell\ChunkAudio\Command]
+; @="Powershell.exe -File C:\\Users\\Me\\Desktop\\petit_program\\PowerShell\\PowerShell_script\\5min_chunk_audio.ps1 \"%1\" ""  
